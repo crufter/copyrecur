@@ -23,7 +23,7 @@ func CopyFile(source string, dest string) (err error) {
 	_, err = io.Copy(df, sf)
 	if err == nil {
 		si, err := os.Stat(source)
-		if err != nil {
+		if err == nil {
 			err = os.Chmod(dest, si.Mode())
 		}
 
